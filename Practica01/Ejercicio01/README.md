@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  
-<head>
-  <meta charset="UTF-8">
-  <title>Ejercicio01 - Bash Instructions</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 2em; }
-    p { margin: 0.5em 0; }
-    pre { background: #f4f4f4; border-radius: 4px; padding: 1em; }
-    code { font-family: Consolas, "Courier New", monospace; }
-  </style>
-</head>
-  
 <body>
   <h2>Ejercicio01 - Bash Instructions</h2>
   <p>Primer ejercicio de la práctica 01</p>
