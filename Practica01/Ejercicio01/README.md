@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
   <meta charset="UTF-8">
   <title>Ejercicio01 - Bash Instructions</title>
@@ -10,6 +11,7 @@
     code { font-family: Consolas, "Courier New", monospace; }
   </style>
 </head>
+  
 <body>
   <h2>Ejercicio01 - Bash Instructions</h2>
   <p>Primer ejercicio de la práctica 01</p>
