@@ -5,9 +5,9 @@
 <pre><code>cd Ejercicio01</code></pre>
   
 <h1>Carpeta 1.SingleEnd</h1>
-<p>Para descomprimir y comprimir archivos en formato .gz<\p>
+<p>Para descomprimir y comprimir archivos en formato .gz</p>
 <pre><code>gunzip -h</code></pre>
-<p>(Utilizar la ayuda para mostrar opciones)<\p>
+<p>(Utilizar la ayuda para mostrar opciones)</p>
 
 <p>Descomprimir</p>
 <pre><code>srun --mem 8G -n1 -p q1 gunzip IlluminaReads_NewStyle.fastq.gz</code></pre>
