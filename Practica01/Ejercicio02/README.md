@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<p>Carpeta 2.Paired-End_Reads</p>
+<h1>Carpeta 2.Paired-End_Reads</h1>
 <p>Para filtrar reads pareados con base a valores de calidad determinados</p>
 <p>El programa a utilizar debe garantizar mantener simpre secuencias pareadas eliminando aquellas que no cumplan con los valores asignados como umbral. En caso de que una de las secuencias sea eliminada (R1 o R2) el par correspondiente será eliminado para no retener secuencias huerfanas.</p>
 <pre><code>module load q1/ngstools/master</code></pre>
