@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <body>
+<h2>Ejercicio01 - Bash Instructions</h2>
+<p>Primer ejercicio de la práctica 01</p>
+<pre><code>mkdir Ejercicio01</code></pre>
+<pre><code>cd Ejercicio01</code></pre>
 <h1>Carpeta 1.SingleEnd</h1>
 <p>Para descomprimir y comprimir archivos en formato .gz</p>
 <p>(Utilizar la ayuda para mostrar opciones)</p>
