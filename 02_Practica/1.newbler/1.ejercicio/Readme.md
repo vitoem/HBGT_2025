@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p> La intención con este ejercicio es ensamblar un genoma bacteriano de aproximadamente 0.4 Mpb y utilizando para dicho fin coberturas (profundidad) de 10X y 20X, respectivamente.</p>
+<p>El programa (ensamblador) a utilizar será Newbler v3.0, el cual fue incialmente generado para ensamblar preferentemente dato generados con el pirosecuenciador 454 provenientes de bibliotecas tanto SE como mate-paired. Posteriormente dicho ensamblador fue optimizado para realizar ensamblajes híbridos utilizando también secuencias PE generadas con la plataforma illumina y/o secuencias SE generadas con la plataforma PacBio siempre y cuando estas no excedan una longitud de 30 Kpb.</p>
+<p>Como input, los archivos pueden estas en formato .fasta, .fasta y .qual, y fastq.</p>
+<p>Revise las características de las secuencias a utilizar para generar el ensamblado antes de realizar el mismo. Para tal propósito puede utilizar el script de perl provisto en su directorio de trabajo (fastx-length.pl). Dicho script fue descargado del repositorio GitHub (https://github.com/gringer/bioinfscripts/blob/master/fastx-length.pl).</p>
+<p>Generé un script que permita que el gestor de tareas (Slurm) envía a la cola de trabajo dicho proceso, cargue el modulo y consulte el manual y/o la ayuda para realizar dicha tarea.</p>
+<p>Una vez realizado el ensamblado se deberán discutir las diferencias de los resultados obtenidos. Si lo considera necesario, utilice de nueva cuenta el script fastx-length.p Si lo considera necesario, utilice de nueva cuenta el script fastx-length.pl</p>
+</body>
+</html>
