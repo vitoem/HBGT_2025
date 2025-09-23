@@ -1,0 +1,5 @@
+#Repetiremos el Ejercicio01, es decir, se llevara a cabo una predicción de modelos génicos pero ahora refinando los mismos con base en evidencia transcripcional (Un transcriptoma ensamblado). 
+
+#Aun cuando se proporciona un script de slurm para realizar este trabajo, es importante se discuta línea por línea y, una vez generados los resultados, discutir todos ellos. Comparar los mismos con aquellos obtendinos en el ejercicio anterior (Ejercicio01, predicción ab initio).
+
+Para este último paso (el comparativo) utilice el programa Jbrowse.
