@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+--------------------------
+<h2>Ejercicio 01</h2>h2>
+--------------------------
+<p>Asumamos que tenemos la secuencia parcial o completa de un genoma (PartialGenome.fasta) y que en este deseamos identificar aquellos genes/locis cuyos transcritos corresponden a RNAs no codificantes (p.ej. RNAs ribosomales, RNAs de transferencia, RNAs nucleares, precursores de miRNAs, etc). Para dicho propopsito se comparará el genoma de interés contra la base de datos Rfam (https://rfam.xfam.org/). Este comparativo lo realiza el programa infernal utilizando modelos ocultos de markov, es decir compara las secuencias mediante el modelado de procesos estocásticos donde la ocurrencia está asociada a la distribución de la probabilidad.</p>
+<p>Revise las opciones a utilizar en el script Rfam.slurm. Tiempo aprox. 15 min.</p>
+<p>Analice el resultado</p>
+--------------------------
+<h2>Ejercicio 02</h2>h2>
+--------------------------
+<p>Una vez obtenido el resultado, "parsee" el archivo *.tblout para seleccionar únicamente los RNAs de transferencia (tRNA).</p>
+<pre><code>grep "tRNA" RfamResult.tblout > tRNAs.tblout</code></pre>
+<p>Utilizando las coordenadas de alguno de los loci, substraiga la secuencia correpondiente al mismo. Para dicho proposito utilice el programa extractseq de la paquetería de emboss.</p>
+
+  <pre><code>module load emboss/6.6.0/gcc/8.3.1-7aag</code></pre>
+  
+<pre><code>srun --mem 8G -n1 -p q2 extractseq -sequence PartialGenome.fasta -outseq tRNAs.fasta -regions "2354324..2354396 8322791..8322874" -separate</code></pre>
+<p>Para visualizar (sólo si lo considera necesario) puede utilizar el siguiente servidor en línea (http://rna.tbi.univie.ac.at/cgi-bin/RNAWebSuite/RNAfold.cgi)</p>
+</body>
+</html>
