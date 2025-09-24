@@ -1,0 +1,64 @@
+# Carpeta /Practica09
+
+--------------------------------------------
+Ejercicio-01
+--------------------------------------------
+
+#Copie o genere un link simbolico en su directorio actual hacia los archivos resultantes de la Practica08, es decir, los resultados generados con los ensambaldores Mira y Trinity.
+
+cp ../Practica08/2.MiraAssembly/Mira_assembly/Mira_d_results/Mira_out.unpadded.fasta .
+cp ../Practica08/3.TrinityAssembly/trinity_out_dir.Trinity.fasta .
+
+#Para mayor facilidad, renombre los archivos
+
+mv Mira_out.unpadded.fasta Mira.fasta
+mv trinity_out_dir.Trinity.fasta Trinity.fasta
+
+#Utilice el script de perl "fastx-length.pl" (https://github.com/gringer/bioinfscripts/blob/master/fastx-length.pl) para calcular algunas metricas/estadisticas simples.
+
+perl fastx-length.pl Mira.fasta > MetricasMira.txt
+perl fastx-length.pl Trinity.fasta > MetricasTrinity.txt
+
+#Analice los resultados...
+
+#Procese los resultados de ambos ensambladores utilizando la herramienta seqclean. Al termino genere nuevas métricas y compare ambos resultados.
+
+module load seqclean/1.0/gcc/9.3.0-2hn4
+seqclean Mira.fasta -l 201
+seqclean Trinity.fasta -l 201
+
+perl fastx-length.pl Mira.fasta.clean > MetricasMiraCln.txt
+perl fastx-length.pl Trinity.fasta.clean > MetricasTrinityCln.txt
+
+--------------------------------------------
+Ejercicio-02
+--------------------------------------------
+
+#Identifique marcos de lectura abiertos al interior de las contigs (unigenes) resultantes de los procesos de ensamblados.
+#Utilice la herramienta "getorf" disponible en el kit de herramientas de Emboss (http://emboss.sourceforge.net/). Para dicho proposito ejecute getORF.slurm. Antes de ejecutar la tarea, visualice el contenido de dicho archvio (getORF.slurm) cargue el modulo correspondiente y lea el archivo de ayuda para interpretar las variables utilizadas
+
+#EMBOSS
+#q1 module emboss/6.6.0/gcc/9.3.0-4geh
+#q2 module emboss/6.6.0/gcc/8.3.1-7aag
+
+module load emboss/6.6.0/gcc/9.3.0-4geh
+getorf --help
+sbatch getORF.slurm
+
+#Analice los archivos resultantes (.fna y .faa)
+
+--------------------------------------------
+Ejercicio-03
+--------------------------------------------
+
+#Para generar un archivo que contenga la secuencia proteica correspondiente al ORF mas largo identificado en cada unigene, ejecute el script de perl tranlate2aa.pl (descargado de GitHub). El script antes mencionado requiere emboss (utiliza getOrf) y algunas bibliotecas de bioperl, por lo que debe asegurese de cargar los modulos correspondientes cuando ejecuta el script en la línea de comandos.Tambien puede hacer esta tarea generando un script para ejecutarse a través de slurm (vea como ejemplo el archivo Translate.slurm).
+
+#Ejecute preferentemente la tarea de la siguiente manera (tiempo aproximado 25 min)
+
+sbatch Translate.slurm
+
+#Estime las metricas para los archivos recientemente generados y compare las salidas
+
+perl fastx-length.pl TrinityORFsTranslated.fasta > MetricasTrinityPRT.txt
+perl fastx-length.pl MiraORFsTranslated.fasta > MetricasMiraPRT.txt
+

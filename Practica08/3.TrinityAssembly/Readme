@@ -1,0 +1,13 @@
+# Carpeta ../Practica08/2.TrinityAssembly
+
+--------------------------------------------
+
+#Los archivos fastq a utilizar serán aquellos que fueron generados tras el concatenado de todas las secuencias R1 y R2 y que fueron también utilizados para generar el ensamblado con Mira.
+
+# A diferencia del ensamblador Mira y algunos otros disponibles, Trinity utiliza siempre un unico archivo de entrada R1 y/o R2 así que, en caso de multiples bibliotecas debe estas siempre concatenarse como se hizo anteriomente. Tenga en cuenta que para el caso del ensamblador Mira, puede esta condicionante no ser necesaria.
+
+#Analice el contenido del script con la tarea a ejecutar (TrinityAssembly.slurm), puede tambien cargar el modulo de manera independiente en su linea de comando y solicitar el archivo de ayuda para ver mas informacion sobre las opciones disponibles.
+
+#NOTA: Ejecutar la tarea sin hacer uso de la opción "--normalize_reads"; esta opción hace que la tarea sea en ocasiones más lenta pero, al simplificar el proceso de ensamblado optimiza el mismo y muchas veces mejora el resultado (no siempre más es mejor). Asegurese de NO utilizar dicha opción pues, por motivos de simplificar los ejercicios y optimizar los tiempos de computo, usted esta ya trabajando con datos normalizados. Ejecutar este ensamblado tomará 2.9 hrs.
+
+-------------------------------------------
