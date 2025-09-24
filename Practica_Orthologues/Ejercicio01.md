@@ -7,6 +7,12 @@ Una base de datos (BD) almacena datos y los conecta en una unidad lógica junto 
 Las BD y diversas herramientas desarrolladas para explorarlas, permiten la búsqueda de secuencias biológicas, genes y genomas, patrones de expresión genética, variación epigenética, interacciones proteína-proteína, frecuencias de variantes, elementos reguladores y análisis comparativos entre diversos organismos.​
 </p>
 
+
+<pre><code>
+conda activate ncbi_datasets
+</code></pre>
+
+
 <pre><code>
 datasets summary gene symbol Or5 --taxon "Apis mellifera"​
 datasets summary gene symbol Or5 --taxon "Apis mellifera" --report product​
@@ -14,7 +20,6 @@ datasets summary gene symbol Or5 --taxon "Apis mellifera" --as-json-lines |
 \ dataformat tsv gene --fields symbol,gene-id,gene-type,description,tax-id​
 dataformat tsv gene --help
 </code></pre>
-
 
 
 <pre><code>
@@ -39,7 +44,6 @@ datasets summary genome taxon 7460 --annotated --as-json-lines | \​
 datasets summary genome taxon 7460 –annotated​
 datasets download genome taxon 7460 --annotated --include genome,cds,protein,gff3
 </code></pre>
-
 
 
 
