@@ -45,6 +45,24 @@ datasets summary genome taxon 7460 –annotated​
 datasets download genome taxon 7460 --annotated --include genome,cds,protein,gff3
 </code></pre>
 
+<pre><code>
+#!/bin/bash
+#SBATCH -J orthofinder
+#SBATCH -n 4
+#SBATCH -N 1
+#SBATCH --mem 16G
+#SBATCH -t 0
+#SBATCH -e err_%j_orthofinder.log
+#SBATCH -o out_%j_orthofinder.log
+#SBATCH -p q1
+
+module load orthofinder/2.2.0/gcc/8.3.1-mdl7 \
+        diamond/0.9.25/gcc/8.3.1-p46g
+
+orthofinder -S diamond -t 4 -a 2 -f Proteomes
+
+</code></pre>
+
 
 
 
