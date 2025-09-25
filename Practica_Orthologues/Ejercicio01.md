@@ -53,31 +53,53 @@ datasets summary genome taxon 7460 --annotated​
 datasets download genome taxon 7460 --annotated --include genome,cds,protein,gff3
 </code></pre>
 
-<h2> Obtención de datos para la pŕactica. </h2>  
+<h2> Obtención de datos para la práctica. </h2>  
 
-
-
-
-
-
+1. Consulta el manual de ayuda de dataset summary genome y describe el siguiente comando:
 
 <pre><code>
-#!/bin/bash
-#SBATCH -J orthofinder
-#SBATCH -n 4
-#SBATCH -N 1
-#SBATCH --mem 16G
-#SBATCH -t 0
-#SBATCH -e err_%j_orthofinder.log
-#SBATCH -o out_%j_orthofinder.log
-#SBATCH -p q1
-
-module load orthofinder/2.2.0/gcc/8.3.1-mdl7 \
-        diamond/0.9.25/gcc/8.3.1-p46g
-
-orthofinder -S diamond -t 4 -a 2 -f Proteomes
-
+datasets summary genome taxon 1763 --reference --annotated --as-json-lines --assembly-level=complete |\
+        dataformat tsv genome --fields accession,assminfo-name,annotinfo-name,annotinfo-release-date,organism-name
 </code></pre>
+
+2. Generar una copia del script "descarga_sin_comentarios.slurm", revisa su contenido y documpentalo al añadir los comentarios necesarios para explicar lo que hace.
+<pre><code>
+cp descarga_sin_comentarios.slurm descarga_comentado.slurm
+vim descarga_comentado.slurm
+</code></pre>
+
+3. Una vez que hayas documentado el nuevo script, ejeútalo a través de slurm.
+<pre><code>
+sbatch descarga_comentado.slurm
+</code></pre>
+
+4. Ahora revisa la instrucción del script en el directorio "01.OrthoFinder"; carga los módulos necesarios para consultar los manuales antes de lanzar el job.
+<pre><code>
+sbatch OrthoFinder.slurm
+</code></pre>
+
+5. En el directorio "02.Cafe" genera un enlace simbólico a los siguientes archivos resultantes del proceso de Orthofinder:
+<pre><code>
+ln -s ../Proteomes/Results_*/Orthogroups.txt
+ln -s ../Proteomes/Results_*/Orthologues_*/SpeciesTree_rooted.txt
+</code></pre>
+
+6. Ejecuta el script de slurm "01.parse_orthofinder.slurm" para poder parsear la salida de OrthoFinder.
+<pre><code>
+sbatch 01.parse_orthofinder.slurmOrthogroups.txt
+</code></pre>
+
+7. Ejecuta el siguiente script para filtrar los ortogrupos.
+<pre><code>
+srun --mem 8G -n 1 -p q1 python3 clade_and_size_filter.py -i Count_gene_families.txt -o Count_gene_families_filtered.txt -s
+</code></pre>
+
+8. Revisa el script de slurm "02.cafe5.slurm"; carga los módulos necesarios para consultar su manual.
+<pre><code>
+sbatch 02.cafe5.slurm
+</code></pre>
+
+
 
 
 
