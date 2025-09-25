@@ -53,6 +53,11 @@ datasets summary genome taxon 7460 --annotated​
 datasets download genome taxon 7460 --annotated --include genome,cds,protein,gff3
 </code></pre>
 
+<h2> Obtención de datos para la pŕactica. </h2>  
+
+
+
+
 
 
 
