@@ -23,13 +23,13 @@ Para poder hacer uso de esta herramienta utilizaremos el siguiente ambiente de c
 conda activate ncbi_datasets
 </code></pre>
 
+### 1. `datasets summary gene`
+Una de las primeras funciones de la herramienta (***summary***) permite generar un **resumen de información** sobre cualquier gen. La consulta del gen se puede hacer a través de accesión o incluso a través de su símbolo. Por ejemplo, si se quisira consultar información del gen con símbolo **`Or5`** de la especie **Apis mellifera** (abeja melífera), se podría utilizar el siguiente comando:
 
-### 1. `datasets summary gene symbol Or5 --taxon "Apis mellifera"`
+```bash
+datasets summary gene symbol Or5 --taxon "Apis mellifera" --as-json-lines | \
+dataformat tsv gene --fields symbol,gene-id,gene-type,description,tax-id
 
-- **Qué hace:**  
-  Genera un **resumen de información** sobre el gen con símbolo **`Or5`** en el organismo **Apis mellifera** (abeja melífera).  
-- **Utilidad:**  
-  Permite consultar datos básicos de un gen específico en una especie concreta, útil para verificar su existencia y obtener una vista general.
 
 ---
 
