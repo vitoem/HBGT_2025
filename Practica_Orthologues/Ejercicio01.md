@@ -8,12 +8,14 @@ Las BD y diversas herramientas desarrolladas para explorarlas, permiten la búsq
 </p>
 
 <p>
-En esta práctica utilizaremos una herramienta de línea de comandos (CLI) desarrollada por el NCBI (National Center for Biotechnology Information), llamada **ncbi_datasets**. Esta paqueteria permite descargar datos biológicos directamente desde las bases de datos del NCBI sin necesidad de usar un navegador web. Está pensada para trabajar de manera rápida, automatizada y reproducible con información como:
+En esta práctica utilizaremos una herramienta de línea de comandos (CLI) desarrollada por el NCBI (National Center for Biotechnology Information), llamada **ncbi_datasets**. Esta paqueteria permite descargar datos biológicos directamente desde las bases de datos del NCBI sin necesidad de usar un navegador web. Está pensada para trabajar de manera rápida, automatizada y reproducible con información como:</p>
+        
 + Genomas completos o parciales.
 + Secuencias de genes o proteínas.
 + Anotaciones.
 + Metadatos asociados a organismos, ensamblajes o taxones.
 
+<p>
 Para poder hacer uso de esta herramienta utilizaremos el siguiente ambiente de conda:
 </p>
 
