@@ -23,44 +23,24 @@ Para poder hacer uso de esta herramienta utilizaremos el siguiente ambiente de c
 conda activate ncbi_datasets
 </code></pre>
 
-### 1. `datasets summary gene`
-Una de las primeras funciones de la herramienta (***summary***) permite generar un **resumen de información** sobre cualquier gen. La consulta del gen se puede hacer a través de accesión o incluso a través de su símbolo. Por ejemplo, si se quisira consultar información del gen con símbolo **`Or5`** de la especie **Apis mellifera** (abeja melífera), se podría utilizar el siguiente comando:
-
-```bash
-datasets summary gene symbol Or5 --taxon "Apis mellifera" --as-json-lines | \
-dataformat tsv gene --fields symbol,gene-id,gene-type,description,tax-id
-
-
----
-
-### 2. `datasets summary gene symbol Or5 --taxon "Apis mellifera" --report product`
-
-- **Qué hace:**  
-  Similar al comando anterior, pero agrega la opción **`--report product`** para mostrar un **informe más detallado sobre los productos génicos** (ej. proteínas o transcritos asociados al gen `Or5`).  
-- **Utilidad:**  
-  Es útil para obtener información de los productos derivados del gen y no solo del gen en sí, lo que apoya análisis funcionales.
-
----
-
-### 3. 
-```bash
-datasets summary gene symbol Or5 --taxon "Apis mellifera" --as-json-lines | \
-dataformat tsv gene --fields symbol,gene-id,gene-type,description,tax-id
-
-
+## 1. `datasets summary gene`
+Una de las primeras funciones de la herramienta (***summary***) permite generar un **resumen de información** sobre cualquier gen. La consulta del gen se puede hacer a través de accesión o incluso a través de su símbolo. Por ejemplo, si se quisira consultar información del gen con símbolo **`Or5`** de la especie ***Apis mellifera*** (abeja melífera), se podría utilizar el siguiente comando:
 
 <pre><code>
-datasets summary gene symbol Or5 --taxon "Apis mellifera"​
-datasets summary gene symbol Or5 --taxon "Apis mellifera" --report product​
-datasets summary gene symbol Or5 --taxon "Apis mellifera" --as-json-lines |
-\ dataformat tsv gene --fields symbol,gene-id,gene-type,description,tax-id​
-dataformat tsv gene --help
+datasets summary gene symbol Or5 --taxon "Apis mellifera" --as-json-lines | \
+dataformat tsv gene --fields symbol,gene-id,gene-type,description,tax-id
 </code></pre>
 
+## 2. `datasets download gene`
+Para descargar los datos relacionados con el gen **`Or5`** del taxón de ***Apis mellifera***, podemos utilizar el siguiente comnado, el cual descarga la información asociada a dicho gen en un archivo comprimido llamado **`ncbi_dataset.zip`**. 
 
 <pre><code>
-datasets download gene symbol Or5 --taxon 7460​
+datasets download gene symbol Or5 --taxon "Apis mellifera"
 unzip ncbi_dataset.zip​
+</code></pre>
+
+El comando además permite, al utilizar la opción **--include**, seleccionar la información de descarga:
+<pre><code>
 datasets download gene symbol Or5 --taxon 7460 --include gene,rna,cds,protein
 </code></pre>
 
