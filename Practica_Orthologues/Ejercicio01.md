@@ -24,6 +24,31 @@ conda activate ncbi_datasets
 </code></pre>
 
 
+### 1. `datasets summary gene symbol Or5 --taxon "Apis mellifera"`
+
+- **Qué hace:**  
+  Genera un **resumen de información** sobre el gen con símbolo **`Or5`** en el organismo **Apis mellifera** (abeja melífera).  
+- **Utilidad:**  
+  Permite consultar datos básicos de un gen específico en una especie concreta, útil para verificar su existencia y obtener una vista general.
+
+---
+
+### 2. `datasets summary gene symbol Or5 --taxon "Apis mellifera" --report product`
+
+- **Qué hace:**  
+  Similar al comando anterior, pero agrega la opción **`--report product`** para mostrar un **informe más detallado sobre los productos génicos** (ej. proteínas o transcritos asociados al gen `Or5`).  
+- **Utilidad:**  
+  Es útil para obtener información de los productos derivados del gen y no solo del gen en sí, lo que apoya análisis funcionales.
+
+---
+
+### 3. 
+```bash
+datasets summary gene symbol Or5 --taxon "Apis mellifera" --as-json-lines | \
+dataformat tsv gene --fields symbol,gene-id,gene-type,description,tax-id
+
+
+
 <pre><code>
 datasets summary gene symbol Or5 --taxon "Apis mellifera"​
 datasets summary gene symbol Or5 --taxon "Apis mellifera" --report product​
