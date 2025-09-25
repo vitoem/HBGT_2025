@@ -99,6 +99,9 @@ srun --mem 8G -n 1 -p q1 python3 clade_and_size_filter.py -i Count_gene_families
 sbatch 02.cafe5.slurm
 </code></pre>
 
+9. Revisa los resultados de ambos programas, incluyendo las filogenias que fueron generadas, las cuales puedes visualizar en alguna herramienta como: https://itol.embl.de/
+    
+
 
 
 
