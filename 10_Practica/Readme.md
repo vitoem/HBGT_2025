@@ -1,6 +1,6 @@
 
 --------------------------------
-Ejercicio-01
+<h2>Ejercicio-01</h2>
 --------------------------------
 
 #Revise el contenido y las opicones a utilizar en el script AlignWise.slurm, discuta cada una de ellas. Debido al tiempo de computo necesario para este proceso (21 hrs), este no será ejecutado durante el curso, sin embargo, analizaremos los archivos que resultarían tras ejecutar el mismo.
